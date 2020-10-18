@@ -8,6 +8,7 @@ La idea principal del proyecto es analizar los comentarios de las quejas y recla
 
 - En la carpeta "parte_2" se encuentran los archivos.py en los cuales se programó el dashboard que contiene gráficas con información de interés para BBVA acerca de la opinión de sus clientes en España, México y Colombia así como una comparación de esta información con otros 2 bancos por país
 
+<<<<<<< HEAD
 En la parte 2 se encuentra el código archivo "final.py" que ejecuta el dashboard.
 ## Pasos para correr el Dashboard
 
@@ -18,4 +19,6 @@ En la parte 2 se encuentra el código archivo "final.py" que ejecuta el dashboar
 5. 
 
 
+=======
+>>>>>>> 114c76e2a03c5979a183a06d26768f4842274427
 
