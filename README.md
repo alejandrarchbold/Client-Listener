@@ -12,7 +12,7 @@ La idea principal del proyecto es analizar los comentarios de las quejas y recla
 En la parte 2 se encuentra el código archivo "final.py" que ejecuta el dashboard.
 ## Pasos para correr el Dashboard
 
-1. Descargar repositorio
+1. Descargar repositorio. Instalar pycountry.
 2. Abrir la terminal y dirigirse hasta la carpeta donde se encuentra el repositorio
 3. Una vez dentro de la carpeta Client-Listener ejecutar el comando python final.py. Eso arroja una direccion IP. 
 4. Ingresar esa IP en el navegador
