@@ -24,11 +24,10 @@ import matplotlib.pyplot as plt
 """ import tweepy
 from textblob import TextBlob
 from wordcloud import WordCloud
-import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import xlrd """
-
+import numpy as np
 
 #DEFINIR FUNCIONES----------------------------------------------------x
 
