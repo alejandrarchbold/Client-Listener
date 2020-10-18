@@ -255,6 +255,7 @@ Grafica_esp_1.update_layout(barmode = 'stack')
 #-----------------------------------------------------------------------x
 #Dash board y Layout (creacion de aplicacion web)
 
+
 aplicacion = dash.Dash(__name__)
 
 aplicacion.layout=html.Div([
@@ -286,16 +287,34 @@ aplicacion.layout=html.Div([
                     (html.H5("La idea del proyecto es analizar los comentarios de las quejas y reclamaciones de BBVA y otros dos bancos competidores en Colombia, México y España. Los datos los extraeremos de las páginas de opiniones (a través de scraping) y Twitter. Asimismo, analizaremos el impacto de BBVA y la pandemia del COVID-19 de acuerdo a los comentarios de Twitter de los tres países mencionados. Aplicaremos modelos de similitud con NLP y análisis de sentimientos. Finalmente, representaremos los resultados en un dashboard en python.")
                     ),dcc.Graph(id="Graph"
                     ),
-                    html.H2("Informacion y graficas de bancos 2"
-                    ),dcc.Graph(id="Graph2"),
-                     html.H2("Informacion y graficas de bancos 3"
-                    ),dcc.Graph(id="Graph3"),
-                     html.H2("Informacion y graficas de bancos 4"
-                    ),dcc.Graph(id="Graph4"),
+                    html.Img(id='im1',src='/assets/col2.png',style={'display':'none'}),
+    
+                    html.Img(id='im2',src='/assets/col3.png',style={'display':'none'}),
+                    
+                    html.Img(id='im3',src='/assets/col4.png',style={'display':'none'}),
+    
+    
+                    html.Img(id='im4',src='/assets/mex2.png',style={'display':'none'}),
+    
+                    html.Img(id='im5',src='/assets/mex3.png',style={'display':'none'}),
+                    
+                    html.Img(id='im6',src='/assets/mex4.png',style={'display':'none'}),
+    
+    
+                    html.Img(id='im7',src='/assets/esp2.png',style={'display':'none'}),
+    
+                    html.Img(id='im8',src='/assets/esp3.png',style={'display':'none'}),
+                    
+                    html.Img(id='im9',src='/assets/esp4.png',style={'display':'none'}),
+    
+                    
+                    dcc.Graph(id="Graph2", figure=Grafica_world_2),
+                     dcc.Graph(id="Graph3", figure=Grafica_world_3),
+                     dcc.Graph(id="Graph4", figure=Grafica_world_4),
 
                     ])
 
-"Actualizar el mapa con la sleccion del dropdown"
+#"Actualizar el mapa con la sleccion del dropdown"
 
 @aplicacion.callback(Output('graph-court', 'figure'), 
               [Input('dropdown', 'value')])
@@ -326,48 +345,122 @@ def update_figure_2(selected_value):
         newG=Grafica_esp_1
     return newG
 
-@aplicacion.callback(Output('Graph2', 'figure'), 
+@aplicacion.callback(Output('Graph2', 'style'), 
               [Input('dropdown', 'value')])
 
 def update_figure_3(selected_value):
-    if selected_value == 'World':
-        newG=Grafica_world_2
-    elif selected_value == 'Colombia':
-        pass
-    elif selected_value == 'Mexico':
-        pass
-    elif selected_value == 'Spain':
-        pass
-    return newG
+    if selected_value != 'World':
+        return {'display':'none'}
+    else:
+        return {'display':'block'}
 
 
-@aplicacion.callback(Output('Graph3', 'figure'), 
+
+@aplicacion.callback(Output('Graph3', 'style'), 
               [Input('dropdown', 'value')])
 
 def update_figure_4(selected_value):
-    if selected_value == 'World':
-        newG=Grafica_world_3
-    elif selected_value == 'Colombia':
-        newG=Grafica_world_3
-    elif selected_value == 'Mexico':
-        newG=Grafica_world_3
-    elif selected_value == 'Spain':
-        newG=Grafica_world_3
-    return newG
+    if selected_value != 'World':
+        return {'display':'none'}
+    else:
+        return {'display':'block'}
 
-@aplicacion.callback(Output('Graph4', 'figure'), 
+
+@aplicacion.callback(Output('Graph4', 'style'), 
               [Input('dropdown', 'value')])
 
 def update_figure_5(selected_value):
-    if selected_value == 'World':
-        newG=Grafica_world_4
-    elif selected_value == 'Colombia':
-        newG=Grafica_world_4
-    elif selected_value == 'Mexico':
-        newG=Grafica_world_4
-    elif selected_value == 'Spain':
-        newG=Grafica_world_4
-    return newG
+    if selected_value != 'World':
+        return {'display':'none'}
+    else:
+        return {'display':'block'}
+
+
+#Colombia
+@aplicacion.callback(Output('im1', 'style'), 
+              [Input('dropdown', 'value')])
+
+def update_figure_5(selected_value):
+    if selected_value == 'Colombia':
+        return {'display':'block',"width":"75%"}
+    else:
+        return {'display':'none'}
+    
+@aplicacion.callback(Output('im2', 'style'), 
+              [Input('dropdown', 'value')])
+
+def update_figure_5(selected_value):
+    if selected_value == 'Colombia':
+        return {'display':'block',"width":"75%"}
+    else:
+        return {'display':'none'}
+    
+@aplicacion.callback(Output('im3', 'style'), 
+              [Input('dropdown', 'value')])
+
+def update_figure_5(selected_value):
+    if selected_value == 'Colombia':
+        return {'display':'block',"width":"75%"}
+    else:
+        return {'display':'none'}
+    
+#México
+@aplicacion.callback(Output('im4', 'style'), 
+              [Input('dropdown', 'value')])
+
+def update_figure_5(selected_value):
+    if selected_value == 'Mexico':
+        return {'display':'block',"width":"75%"}
+    else:
+        return {'display':'none'}
+    
+@aplicacion.callback(Output('im5', 'style'), 
+              [Input('dropdown', 'value')])
+
+def update_figure_5(selected_value):
+    if selected_value == 'Mexico':
+        return {'display':'block',"width":"75%"}
+    else:
+        return {'display':'none'}
+    
+@aplicacion.callback(Output('im6', 'style'), 
+              [Input('dropdown', 'value')])
+
+def update_figure_5(selected_value):
+    if selected_value == 'Mexico':
+        return {'display':'block',"width":"75%"}
+    else:
+        return {'display':'none'}
+    
+    
+#España
+@aplicacion.callback(Output('im7', 'style'), 
+              [Input('dropdown', 'value')])
+
+def update_figure_5(selected_value):
+    if selected_value == 'Spain':
+        return {'display':'block',"width":"75%"}
+    else:
+        return {'display':'none'}
+    
+@aplicacion.callback(Output('im8', 'style'), 
+              [Input('dropdown', 'value')])
+
+def update_figure_5(selected_value):
+    if selected_value == 'Spain':
+        return {'display':'block',"width":"75%"}
+    else:
+        return {'display':'none'}
+    
+@aplicacion.callback(Output('im9', 'style'), 
+              [Input('dropdown', 'value')])
+
+def update_figure_5(selected_value):
+    if selected_value == 'Spain':
+        return {'display':'block',"width":"75%"}
+    else:
+        return {'display':'none'}
+
 
 if __name__=="__main__":
     aplicacion.run_server(debug=True, use_reloader=False)
